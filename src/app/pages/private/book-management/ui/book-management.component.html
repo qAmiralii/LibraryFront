@@ -3,7 +3,7 @@
   <div class="page-container">
     <h2 class="page-title">مدیریت کتاب‌ها</h2>
     <button (click)="adding()" class="add">افزودن</button>
-  @if (dataSource.length > 0) {
+  @if (dataSource?.length > 0) {
   <div class="table-wrapper">
     <table class="book-table">
       <thead>
