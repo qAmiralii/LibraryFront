@@ -5,10 +5,12 @@
     align-items: center;
     background-image: url("/backimg.png");
 }
-
+.header{
+    margin-top: 0.5em;
+}
 .loginbtn{
     color: rgb(0, 55, 235);
-    margin-bottom: 2rem;
+    margin: 2rem;
 }
 .login {
     background-color: white;

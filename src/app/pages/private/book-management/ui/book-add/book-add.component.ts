@@ -27,5 +27,5 @@ export class BookAddComponent implements OnChanges {
   @Output() onOk = new EventEmitter<Book>();
   @Input() current: Book | undefined;
   @Input() actionName = "";
-  data: Book = { id: 0, author: "", price: 0, publisher: "", title: "" }
+  data: Book = { id: "", author: "", price: 0, publisher: "", title: "" }
 }
