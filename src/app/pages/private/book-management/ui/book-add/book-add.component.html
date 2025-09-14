@@ -1,0 +1,27 @@
+<div class="form-container">
+  @if (actionName=="add") {
+    <h2>➕ افزودن کتاب</h2>
+  }
+  @else if (actionName=="edit") {
+    <h2>✍️ ویرایش کتاب</h2>
+  }
+    @else if (actionName=="remove") {
+    <h2>🗑️ حذف کتاب</h2>
+  }
+  <form >
+    <label>عنوان:
+      <input [(ngModel)]="data.title" type="text"  name="title" required />
+    </label>
+    <label>نویسنده:
+      <input [(ngModel)]="data.author" type="text" name="author" required />
+    </label>
+    <label>ناشر:
+      <input [(ngModel)]="data.publisher" type="text"  name="publisher" required />
+    </label>
+    <label>قیمت:
+      <input [(ngModel)]="data.price" type="number"  name="price" required />
+    </label>
+    <button (click)="ok()" type="submit" class="btn save">💾 ذخیره</button>
+    <button (click)="back()" class="btn save"> انصراف</button>
+  </form>
+</div>

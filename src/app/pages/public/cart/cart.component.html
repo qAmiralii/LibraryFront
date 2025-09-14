@@ -1,0 +1,17 @@
+@for (item of products; track $index) {
+
+    <div class="container">
+        <div class="img">
+            <img src="{{item.pic}}" alt="">
+        </div>
+        <div class="title">
+            <p>{{item.title}}</p>
+        </div>
+        <div class="price">
+            {{item.price}}
+        </div>
+        <div class="btn">
+            <button (click)="addToCart($event)">حذف از سبد خرید</button>
+        </div>
+    </div>
+}

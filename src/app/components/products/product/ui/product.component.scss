@@ -1,0 +1,41 @@
+.img{
+    height: 28vw;
+    margin: auto;
+    img{
+        height: 100%;
+    }
+}
+.container{
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px black solid;
+    display: inline-block;
+    border-radius: 1em;
+    padding: 1em;
+    p{
+        display: inline;
+    }
+    .title{
+        text-align: center;
+    }
+    .price{
+        text-align: center;
+
+        color: green;
+    }
+    .btn{
+        text-align: center;
+        button{
+        border-radius: 0.5em;
+            border: 1px black solid;
+            transition: all 0.3s;
+        }
+        button:hover{
+            cursor: pointer;
+            color: white;
+            background-color: rgb(248, 163, 66);
+
+        }
+
+    }
+}

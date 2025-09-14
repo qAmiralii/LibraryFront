@@ -1,0 +1,47 @@
+.menu{
+    display: flex;
+    justify-content: space-between;
+    background-color: chocolate;
+    padding: 0.3em;
+}
+.a-divs {
+    a{
+        color: white;
+        text-decoration: none;
+        margin: 1em;
+
+    }
+}
+.all{
+    margin-bottom: 2vh;
+}
+.inline-flex{
+    margin: 0 50vw 0 0;
+}
+.block{
+    margin: 0 1em;
+}
+.absolute{
+    margin: 0 1em 0 0;
+}
+header{
+    h1{
+        padding: 1em;
+        margin: 0;
+        text-align: center;
+        background-color: rgb(128, 203, 196);
+    }
+}
+footer{
+    background-color: rgb(251, 248, 239);
+    text-align: center;
+}
+#basket{
+    width: 2vw;
+    display: inline-block;
+    position: absolute;
+    left: -1vw;
+}
+#special{
+    position: relative;
+}

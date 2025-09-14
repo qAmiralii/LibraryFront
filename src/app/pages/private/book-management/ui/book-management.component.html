@@ -1,0 +1,44 @@
+@if(action=="home"){
+
+  <div class="page-container">
+    <h2 class="page-title">مدیریت کتاب‌ها</h2>
+    <button (click)="adding()" class="add">افزودن</button>
+  @if (dataSource.length > 0) {
+  <div class="table-wrapper">
+    <table class="book-table">
+      <thead>
+        <tr>
+          <th>عنوان</th>
+          <th>نویسنده</th>
+          <th>ناشر</th>
+          <th>قیمت</th>
+          <th>عملیات</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (book of dataSource; track book) {
+        <tr>
+          <td>{{ book.title }}</td>
+          <td>{{ book.author }}</td>
+          <td>{{ book.publisher }}</td>
+          <td>{{ book.price}}</td>
+          <td>
+            <button class="btn edit" (click)="edit(book)">✏️</button>
+            <button class="btn delete" (click)="remove(book)">🗑️</button>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+  } @else {
+  <div class="empty-state">
+    <p>📚 لیست کتاب‌ها خالی است.</p>
+  </div>
+  }
+</div>
+}
+
+@if (action!=="home") {
+  <app-book-add [actionName]="action" [current]="selected" (onOk)="ok_add($event)" (onCancel)="close()"></app-book-add>
+}

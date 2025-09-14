@@ -1,0 +1,36 @@
+:host {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    background-image: url("/backimg.png");
+}
+
+.loginbtn{
+    color: rgb(0, 55, 235);
+    margin-bottom: 2rem;
+}
+.login {
+    background-color: white;
+    text-align: center;
+    border: 1px black solid;
+    border-radius: 1em;
+    width: 25vw;
+    height: 42vh;
+
+    button {
+
+        left: 2vw;
+    }
+}
+
+.btn {
+    position: relative;
+    height: 10vh;
+    position: absolute;
+    left: 48%;
+    a{
+        color: gray;
+    }
+}
+

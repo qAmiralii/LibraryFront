@@ -1,0 +1,8 @@
+<div class="products">
+    @for (item of products.konkorBooks ; track $index) {
+        <div class="productComponent">
+            <app-product [product]="item"/>
+        </div>
+    }
+</div>
+
