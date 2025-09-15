@@ -1,1 +1,42 @@
-<p>members works!</p>
+@if(action=="home"){
+
+  <div class="page-container">
+    <h2 class="page-title">مدیریت اعضا</h2>
+    <button (click)="adding()" class="add">افزودن</button>
+  @if (dataSource?.length > 0) {
+  <div class="table-wrapper">
+    <table class="book-table">
+      <thead>
+        <tr>
+          <th>نام</th>
+          <th>نام خانوادگی</th>
+          <th>جنسیت</th>
+          <th>عملیات</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (member of dataSource; track $index) {
+        <tr>
+          <td>{{ member.firstName }}</td>
+          <td>{{ member.lastName }}</td>
+          <td>{{ member.gender }}</td>
+          <td>
+            <button class="btn edit" (click)="edit(member)">✏️</button>
+            <button class="btn delete" (click)="remove(member)">🗑️</button>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+  } @else {
+  <div class="empty-state">
+    <p>📚 لیست اعضا خالی است.</p>
+  </div>
+  }
+</div>
+}
+
+@if (action!=="home") {
+  <app-member-add [actionName]="action" [current]="selected" (onOk)="ok_add($event)" (onCancel)="close()"></app-member-add>
+}

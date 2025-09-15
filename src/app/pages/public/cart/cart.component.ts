@@ -1,5 +1,4 @@
 import { Component, inject } from '@angular/core';
-import { BooksService } from '../service/books.service';
 
 @Component({
   selector: 'app-cart',
@@ -8,9 +7,4 @@ import { BooksService } from '../service/books.service';
   styleUrl: './cart.component.scss'
 })
 export class CartComponent {
-addToCart($event: MouseEvent) {
-throw new Error('Method not implemented.');
-}
-  carts = inject(BooksService)
-  products: any[] = this.carts.konkorBooks.filter(x => x.cart == true)
 }

@@ -12,8 +12,6 @@ export class BookService {
   async list() {
     return await this.http.get('http://localhost:5093/v1/books/list').toPromise();
   }
-
-
   async add_book(book: Book) {
     await this.http.post('http://localhost:5093/v1/books/create', book).toPromise();
   }

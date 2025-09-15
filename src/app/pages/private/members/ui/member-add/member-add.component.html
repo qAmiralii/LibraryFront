@@ -1,0 +1,29 @@
+<div class="form-container">
+  @if (actionName=="add") {
+  <h2>➕ افزودن شخص</h2>
+  }
+  @else if (actionName=="edit") {
+  <h2>✍️ ویرایش کتاب</h2>
+  }
+  @else if (actionName=="remove") {
+  <h2>🗑️ حذف کتاب</h2>
+  }
+  <form>
+    <label>نام:
+      <input [(ngModel)]="data.FirstName" type="text" name="title" required />
+    </label>
+    <label>نام خانوادگی:
+      <input [(ngModel)]="data.LastName" type="text" name="author" required />
+    </label>
+    <!-- <label>جنسیت:
+      <select name="gender" required>
+        <option value="">-- انتخاب جنسیت --</option>
+        <option value="0">مرد</option>
+        <option value="1">زن</option>
+      </select>
+      <input [(ngModel)]="data.Gender" type="text" name="publisher" required />
+    </label> -->
+    <button (click)="ok()" type="submit" class="btn save">💾 ذخیره</button>
+    <button (click)="back()" class="btn save"> انصراف</button>
+  </form>
+</div>

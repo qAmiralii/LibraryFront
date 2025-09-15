@@ -1,6 +1,6 @@
-export interface member{
+export interface Member{
     id: string;
     FirstName: string;
     LastName: string;
-    Gender: string;
+    Gender: number;
 }

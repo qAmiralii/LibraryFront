@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { ProductsComponent } from "../../../../components/products/ui/products.component";
+// import { ProductsComponent } from "../../../../components/products/ui/products.component";
 
 @Component({
   selector: 'app-books',
-  imports: [ProductsComponent],
+  imports: [],
   templateUrl: './books.component.html',
   styleUrl: './books.component.scss'
 })
