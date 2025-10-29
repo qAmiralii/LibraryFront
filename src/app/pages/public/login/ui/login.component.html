@@ -1,17 +1,39 @@
 <div class="login">
+    <h1 class="text-3xl header font-bold ">
+        خوش آمدید
+    </h1>
+    <!-- <a routerLink="/admin">ورود</a> -->
     <form>
-        <h1 class="text-3xl header font-bold ">
-            خوش آمدید
-        </h1>
-        <div class="input">
-        </div>
-        <div class="input">
-        </div>
-        <div class="loginbtn">
-            <a routerLink="/admin">ورود</a>
+        <div class="grid gap-6 mb-6 md:grid-cols-2">
+            <div>
+                <div>
+                    <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">نام
+                        کاربری</label>
+                    <input type="text" id="last_name" [(ngModel)]="userLogin.username" name="username"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder="Doe" required />
+                </div>
+            </div>
+            <div class="mb-6">
+                <label for="password"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+                <input type="password" id="password" [(ngModel)]="userLogin.password" name="password"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="•••••••••" required />
+            </div>
+            <div class="flex items-start mb-6">
+                <input id="remember" type="checkbox" value=""
+                    class="w-4 h-4 border border-gray-300 rounded-sm bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800"
+                    required />
+                <label for="remember" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Keep Me</label>
+            </div>
+            <button (click)="check()" type="button"
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">ورود</button>
         </div>
         <div class="btn">
-            <a routerLink="public"> <p>بازگشت </p></a>
+            <a routerLink="public">
+                <p>بازگشت </p>
+            </a>
         </div>
     </form>
 </div>

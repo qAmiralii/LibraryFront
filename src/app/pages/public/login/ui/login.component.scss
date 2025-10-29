@@ -5,27 +5,29 @@
     align-items: center;
     background-image: url("/backimg.png");
 }
-.header{
-    margin-top: 0.5em;
+
+.header {
+    margin-bottom: 2em;
 }
-.loginbtn{
+
+.loginbtn {
     color: rgb(0, 55, 235);
     margin: 2rem;
 }
+
 .login {
     background-color: white;
     text-align: center;
     border: 1px black solid;
     border-radius: 1em;
-    width: 25vw;
-    height: 42vh;
+    padding: 3em;
 }
 
 .btn {
     text-align: center;
     height: 10vh;
-    a{
+
+    a {
         color: gray;
     }
 }
-
