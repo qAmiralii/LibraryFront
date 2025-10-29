@@ -19,12 +19,15 @@ export class LoginComponent {
   busy = false;
   check() {
     this.busy = true;
-    if (this.auth.check(this.userLogin.username, this.userLogin.password)) {
-      this.rout.navigateByUrl('/admin')
-    } else {
-      this.message="ورود ناموفق"
-    }
-    this.busy = false;
+    let res = this.auth.check(this.userLogin.username, this.userLogin.password);
+    res.subscribe(r => {
+      if (r == true) {
+        this.rout.navigateByUrl('/admin')
+      } else {
+        this.message = "ورود ناموفق"
+      }
+      this.busy = false;
+    });
   }
   userLogin: Login = { username: '', password: '', keepMe: false }
   login() {
