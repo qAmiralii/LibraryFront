@@ -1,39 +1,64 @@
-<div class="login">
-    <h1 class="text-3xl header font-bold ">
-        خوش آمدید
-    </h1>
-    <!-- <a routerLink="/admin">ورود</a> -->
-    <form>
-        <div class="grid gap-6 mb-6 md:grid-cols-2">
-            <div>
-                <div>
-                    <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">نام
-                        کاربری</label>
-                    <input type="text" id="last_name" [(ngModel)]="userLogin.username" name="username"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="Doe" required />
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantasy Forest Welcome</title>
+    <script src="/_sdk/element_sdk.js"></script>
+    <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+    <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+</head>
+<body>
+    <div class="fantasy-background"></div>
+    <div class="forest-scene"><!-- Trees -->
+        <div class="floating-leaves">
+            <svg class="leaf leaf-1" viewbox="0 0 20 20" fill="none">
+                <path d="M10 0 Q15 5 20 10 Q15 15 10 20 Q5 15 0 10 Q5 5 10 0 Z" fill="#ff6b35" />
+            </svg>
+            <svg class="leaf leaf-2" viewbox="0 0 20 20" fill="none">
+                <path d="M10 0 Q15 5 20 10 Q15 15 10 20 Q5 15 0 10 Q5 5 10 0 Z" fill="#ffa500" />
+            </svg>
+            <svg class="leaf leaf-3" viewbox="0 0 20 20" fill="none">
+                <path d="M10 0 Q15 5 20 10 Q15 15 10 20 Q5 15 0 10 Q5 5 10 0 Z" fill="#ff4757" />
+            </svg>
+            <svg class="leaf leaf-4" viewbox="0 0 20 20" fill="none">
+                <path d="M10 0 Q15 5 20 10 Q15 15 10 20 Q5 15 0 10 Q5 5 10 0 Z" fill="#ff7675" />
+            </svg>
+        </div>
+    </div>
+    <main class="welcome-container">
+        <div class="welcome-form">
+            <h1 class="welcome-title">خوش آمدید</h1>
+            <p class="welcome-subtitle" id="welcome-subtitle">به کتاب خانه همدان وارد شوید</p>
+            <form id="welcomeForm">
+                <div class="form-group"><input type="email" class="form-input" placeholder="نام کاربری" required
+                        [(ngModel)]="userLogin.username" name="username">
                 </div>
-            </div>
-            <div class="mb-6">
-                <label for="password"
-                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
-                <input type="password" id="password" [(ngModel)]="userLogin.password" name="password"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="•••••••••" required />
-            </div>
-            <div class="flex items-start mb-6">
-                <input id="remember" type="checkbox" value=""
-                    class="w-4 h-4 border border-gray-300 rounded-sm bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800"
-                    required />
-                <label for="remember" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Keep Me</label>
-            </div>
-            <button (click)="check()" type="button"
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">ورود</button>
+                <div class="form-group"><input type="text" class="form-input" placeholder="Password" required
+                        [(ngModel)]="userLogin.password" name="password">
+                </div>
+                <div class="form-options"><label class="checkbox-group"> <input type="checkbox" id="remember"> مرا به
+                        خاطر بسپار </label> <a class="forgot-link">رمز عبور را فراموش کردید؟</a>
+                </div><button type="button" (click)="check()" class="welcome-button" id="main-button">ورود به کتاب
+                    خانه</button>
+                <div class="social-buttons"><a class="social-btn" id="google-btn">
+                        <svg class="social-icon" viewbox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+                            <path
+                                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+                            <path
+                                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
+                            <path
+                                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
+                        </svg> Google </a> <a class="social-btn" id="facebook-btn">
+                        <svg class="social-icon" viewbox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                        </svg> Facebook </a>
+                </div>
+            </form>
         </div>
-        <div class="btn">
-            <a routerLink="public">
-                <p>بازگشت </p>
-            </a>
-        </div>
-    </form>
-</div>
+    </main>
+</body>
+</html>

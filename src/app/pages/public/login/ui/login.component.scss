@@ -1,33 +1,360 @@
-:host {
-    display: flex;
-    justify-content: center;
-    height: 100%;
-    align-items: center;
-    background-image: url("/backimg.png");
-}
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-.header {
-    margin-bottom: 2em;
-}
+        body {
+            box-sizing: border-box;
+        }
 
-.loginbtn {
-    color: rgb(0, 55, 235);
-    margin: 2rem;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-.login {
-    background-color: white;
-    text-align: center;
-    border: 1px black solid;
-    border-radius: 1em;
-    padding: 3em;
-}
+        html,
+        body {
+            height: 100%;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            overflow: hidden;
+        }
 
-.btn {
-    text-align: center;
-    height: 10vh;
+        .fantasy-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #533483 75%, #7209b7 100%);
+            z-index: -2;
+        }
 
-    a {
-        color: gray;
-    }
-}
+        .forest-scene {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .trees {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 80%;
+        }
+
+        .tree {
+            position: absolute;
+            bottom: 0;
+        }
+
+        .tree-1 {
+            left: 5%;
+            width: 120px;
+            height: 300px;
+        }
+
+        .tree-2 {
+            left: 15%;
+            width: 100px;
+            height: 250px;
+        }
+
+        .tree-3 {
+            left: 25%;
+            width: 140px;
+            height: 320px;
+        }
+
+        .tree-4 {
+            right: 30%;
+            width: 110px;
+            height: 280px;
+        }
+
+        .tree-5 {
+            right: 15%;
+            width: 130px;
+            height: 310px;
+        }
+
+        .magical-deer {
+            position: absolute;
+            right: 8%;
+            bottom: 15%;
+            width: 150px;
+            height: 120px;
+            filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.6));
+            animation: gentle-glow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes gentle-glow {
+            0% {
+                filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.6));
+            }
+
+            100% {
+                filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.8));
+            }
+        }
+
+        .floating-leaves {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .leaf {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            opacity: 0.7;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .leaf-1 {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .leaf-2 {
+            top: 30%;
+            left: 80%;
+            animation-delay: 2s;
+        }
+
+        .leaf-3 {
+            top: 60%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        .leaf-4 {
+            top: 40%;
+            left: 70%;
+            animation-delay: 6s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            25% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+
+            50% {
+                transform: translateY(-10px) rotate(-5deg);
+            }
+
+            75% {
+                transform: translateY(-15px) rotate(3deg);
+            }
+        }
+
+        .welcome-container {
+            position: relative;
+            min-height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .welcome-form {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 24px;
+            padding: 40px;
+            width: 100%;
+            max-width: 420px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .welcome-form::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+        }
+
+        .welcome-title {
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .welcome-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+            font-weight: 300;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: right;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 16px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+        }
+
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            margin-left: 8px;
+            accent-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .forgot-link {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .forgot-link:hover {
+            color: white;
+        }
+
+        .welcome-button {
+            width: 100%;
+            padding: 16px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #1a1a2e;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .welcome-button:hover {
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .social-btn {
+            flex: 1;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-1px);
+        }
+
+        .social-icon {
+            width: 18px;
+            height: 18px;
+        }
+
+        @media (max-width: 768px) {
+            .welcome-form {
+                padding: 30px 25px;
+                margin: 10px;
+            }
+
+            .welcome-title {
+                font-size: 2rem;
+            }
+
+            .tree {
+                display: none;
+            }
+
+            .tree-1,
+            .tree-3 {
+                display: block;
+            }
+
+            .magical-deer {
+                width: 100px;
+                height: 80px;
+                right: 5%;
+                bottom: 10%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .welcome-form {
+                padding: 25px 20px;
+            }
+
+            .social-buttons {
+                flex-direction: column;
+            }
+
+            .form-options {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+        }
