@@ -1,1 +1,77 @@
-<p>public-home works!</p>
+<div class="liquid-glass-slider">
+    <div class="slider-header">
+        <h2 class="slider-title">گالری کتاب ها</h2>
+        <p class="slider-subtitle">کتاب خانه مرکزی همدان</p>
+    </div>
+
+    <div class="slider-container">
+        <button class="nav-arrow left" (click)="prevSlide()" aria-label="Previous slide">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </button>
+
+        <div class="slider-track">
+            @for (item of images; let i = $index; track $index) {
+
+            <div class="slide" [class.active]="i === currentIndex"
+                [class.prev]="i === ((currentIndex - 1 + images.length) % images.length)"
+                [class.next]="i === ((currentIndex + 1) % images.length)"
+                [class.far-prev]="i === ((currentIndex - 2 + images.length) % images.length)"
+                [class.far-next]="i === ((currentIndex + 2) % images.length)" [class.hidden]="shouldBeHidden(i)"
+                (click)="goToSlide(i)">
+
+                <div class="slide-content">
+                    <div class="image-container">
+                        <img [src]="item.src" [alt]="item.alt" class="slide-image" alt="">
+                        <div class="glass-overlay"></div>
+                        <div class="liquid-effect"></div>
+                    </div>
+                    <div class="slide-info">
+                        <h3 class="image-title">{{item.name}}</h3>
+                        <p class="image-description">کنکوری</p>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+
+        <button class="nav-arrow right" (click)="nextSlide()" aria-label="Next slide">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </button>
+    </div>
+
+    <div class="slider-indicators">
+        <div *ngFor="let image of images; let i = index" class="indicator" [class.active]="i === currentIndex"
+            (click)="goToSlide(i)">
+        </div>
+    </div>
+
+    <div class="slider-controls">
+        <button class="control-btn" (click)="prevSlide()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+            Previous
+        </button>
+
+        <div class="slide-counter">
+            <span class="current">{{currentIndex + 1}}</span>
+            <span class="separator">/</span>
+            <span class="total">{{images.length}}</span>
+        </div>
+
+        <button class="control-btn" (click)="nextSlide()">
+            Next
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </button>
+    </div>
+</div>
