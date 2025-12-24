@@ -19,7 +19,14 @@
         <tr>
           <td>{{ member.firstName }}</td>
           <td>{{ member.lastName }}</td>
-          <td>{{ member.gender }}</td>
+          <td>
+            @if(member.gender==1){
+              <p>زن</p>
+            }
+            @else{
+              <p>مرد</p>
+            }
+          </td>
           <td>
             <button class="btn edit" (click)="edit(member)">✏️</button>
             <button class="btn delete" (click)="remove(member)">🗑️</button>

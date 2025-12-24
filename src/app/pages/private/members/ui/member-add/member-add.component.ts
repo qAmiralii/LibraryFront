@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { Member } from '../../models/member.model';
 import { FormsModule } from '@angular/forms';
+import { fromEvent } from 'rxjs';
 
 @Component({
   selector: 'app-member-add',
@@ -16,8 +17,11 @@ export class MemberAddComponent implements OnChanges {
   }
 
   ok() {
+    const res = Number(this.data.Gender);
+    this.data.Gender = res;
     this.onOk.emit(this.data);
   }
+
   back() {
     this.onCancel.emit();
   }
